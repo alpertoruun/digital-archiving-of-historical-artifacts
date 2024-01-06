@@ -1,0 +1,17 @@
+Proje: Tarihi Eser Restorasyonu ve Dijital Arşivleme Gelişmiş Sürümü
+Proje Açıklaması:
+Bu proje, eski ve yıpranmış tarihi eserlerin (fotoğraflar, tablolar, belgeler) dijital görüntülerini restorasyon ve arşivleme amacıyla geliştirilmiş bir yaklaşım kullanarak işler. Projemiz, zamanla solmuş, yıpranmış veya hasar görmüş görüntüleri dijital olarak iyileştirir ve bu süreci otomatik bir veritabanı yönetimi sistemiyle birleştirerek tarihi ve kültürel mirasın korunmasına katkıda bulunur.
+
+İhtiyaçlar ve Çözümler:
+
+Netlik ve Okunabilirlik Artırma: Eski ve yıpranmış görüntülerin netliğini ve okunabilirliğini artırarak, görsel kaliteyi iyileştiririz.
+Renk Düzeltme ve Kontrast Artırma: Renk solmalarını düzeltir ve düşük kontrastı iyileştiririz, böylece görüntüler canlılık kazanır.
+Gürültü Azaltma: Gürültüyü azaltarak görüntü kalitesini artırırız.
+Detay Vurgulama: Kenar tespiti ile detayları daha belirgin hale getiririz.
+Keskinleştirme: Görüntünün genel netliğini artırmak için keskinleştirme işlemi uygularız.
+Ek Özellikler:
+
+Görüntü İndeksleme ve Meta Veri Oluşturma: Her görüntü için benzersiz bir tanımlayıcı oluşturur ve bu ID ile görüntünün özelliklerini içeren bir meta veri seti hazırlarız. Böylece, görüntüler aranabilir ve sıralanabilir bir veritabanına eklenir.
+Veritabanı Entegrasyonu: İşlenmiş görüntüleri ve ilgili meta verileri SQLite veritabanına kaydederek, dijital arşivimizi yönetiriz.
+Sonuç:
+Bu geliştirilmiş işlemler, dijital olarak restorasyonu yapılmış tarihi eserlerin daha net, renkli ve detaylı görüntülerini sunar. Ayrıca, veritabanı entegrasyonu sayesinde, tarihi belgeler ve sanat eserleri dijital arşivlerde daha etkili bir şekilde saklanabilir ve sunulabilir. Proje, tarihi ve kültürel mirasın korunması ve dijitalleştirilmesi konusunda önemli bir katkı sağlar ve gerçek dünya uygulamalarında değerli bir kaynak oluşturur.
