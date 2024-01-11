@@ -1,0 +1,83 @@
+Görüntü Kalitesindeki Sorunlar
+
+Zamanla, fotoğrafların üzerinde oluşan aşınma, solma ve lekelenme gibi sorunlar görüntü kalitesini düşürmektedir.
+Gürültü ve piksel bozulmaları, detayların kaybolmasına yol açarak tarihi ve kişisel anıların net bir şekilde korunmasını engeller.
+Mevcut fotoğraf restorasyon yöntemleri, eski fotoğrafların orijinal görünümünü koruyarak dijital ortamda iyileştirmek için yeterli olmayabilir.
+
+Dijital Restorasyon Sürecindeki Zorluklar
+
+Otomatik restorasyon araçları eski fotoğrafların spesifik sorunlarına uyum sağlamakta yetersiz kalabilir.
+Profesyonel restorasyon işlemleri zaman alıcı ve maliyetli olabilir.
+
+Veri Yönetimi ve Arşivleme
+
+İşlenen fotoğrafların meta verilerinin düzenli bir şekilde saklanması ve sorgulanması için etkin bir sistem gerekliliği vardır.
+Dijital arşivleme ve veri tabanı yönetimi, restorasyon sonrası süreçlerde organizasyon ve erişim kolaylığı sağlamalıdır.
+
+Kullanıcı Dostu Olmayan Süreçler
+
+Fotoğraf restorasyonu araçları karmaşık ve kullanıcı dostu olmayan arayüzlere sahip olabilir, bu da amatör kullanıcılar veya arşivciler için restorasyon sürecini zorlaştırır.
+Restorasyon süreçleri, kullanıcıların kişisel tercihlerini ve spesifik ihtiyaçlarını dikkate almayan standart prosedürler izleyebilir.
+
+Kültürel Mirasın Korunması
+Dijital restorasyon araçları, tarihi fotoğrafların canlılığını ve netliğini geri kazandırarak kültürel mirası korur. Bu, geçmişin tanıklığını koruyarak gelecek nesillere aktarılmasını sağlar.
+
+Kişisel Anıların İyileştirilmesi
+Kişisel anlam taşıyan eski fotoğrafların dijital iyileştirmesi, bireylerin aile tarihini ve anılarını daha net ve canlı bir şekilde sürdürmelerine olanak tanır.
+
+Arşivleme ve Erişilebilirlik
+Gelişmiş dijital arşivleme yöntemleri, restorasyon sonrası süreçlerde düzenli ve kolay erişim sağlar, böylece araştırmacıların ve halkın tarihi belgelere erişimi kolaylaşır.
+
+Eğitim ve Araştırma
+Restorasyon süreçleri, eğitim ve araştırma için önemli olan tarihi belgelerin ve görsellerin kalitesini artırarak, bu materyallerin eğitim materyali olarak kullanılmasını genişletir.
+
+Teknolojik İnovasyon
+Bu proje, görüntü işleme teknolojisinin sınırlarını zorlayarak, eski fotoğrafların restorasyonu için otomatik ve kullanıcı dostu araçlar sunar.
+
+
+Literatür Search
+Eski Fotoğrafları Hayata Döndürme:
+
+    Bu makale, gerçekçi bir şekilde modellenmesi zor olan karmaşık bozulmalar içeren eski fotoğrafların restorasyonuyla ilgili zorlukları tartışmaktadır. Genelleme sorunları ve karışık bozulmaları ele almak için veriye dayalı bir yaklaşım önermektedir ve aynı anda birden fazla kusuru restorasyonunu gerçekleştirebilen derin öğrenmeyi kullanmaktadır​
+
+    
+
+Derin Sinir Ağı Yapısına Dayalı Eski Fotoğraf Görüntü Restorasyon İşleme:
+
+    Bu makale, eski fotoğrafların restorasyonunda kullanılan pooling katmanları, doğrusal olmayan aktivasyon katmanları ve üretici karşıt ağları (GAN'lar) hakkında bilgi vermektedir. Ayrıca, görüntü süper çözünürlük görevlerindeki bazı doku detaylarını daha iyi yeniden yapmak için kullanılan bir öz-dikkat mekanizması tasarımını anlatmaktadır​
+
+    
+
+  Gürültü Azaltma: Zamanla fotoğrafların üzerinde oluşan gürültüyü azaltmak için Non-local Means Denoising yöntemi kullanılır. Bu, görüntüdeki rastgele piksel varyasyonlarını ve bozulmalarını düzeltir.
+
+    Renk Dengesi Ayarlama: Eski fotoğraflar genellikle renk solması yaşar. Projede, renk dengesini ayarlamak için bir yöntem kullanılarak fotoğrafların renk canlılığı geri kazandırılır.
+
+    Kontrast Artırma: Adaptive Histogram Equalization yöntemi ile fotoğrafların kontrastı artırılır, bu da detayların daha belirgin hale gelmesini sağlar ve görüntünün genel görünümünü iyileştirir.
+
+    Keskinleştirme (Unsharp Masking): Görüntünün daha net ve detaylı görünmesini sağlamak için unsharp masking teknikleri kullanılır.
+
+    Veritabanı Entegrasyonu: İşlenen görüntülerin metadata bilgileri (işleme tarihi, ek bilgiler vb.) bir SQLite veritabanında saklanır. Bu, dijital arşivleme sürecinin bir parçası olarak, gelecekteki sorgulama ve yönetim için önemlidir.
+
+
+OPENCV: 
+OpenCV (Open Source Computer Vision Library), bilgisayar görüşü ve görüntü işleme alanında kullanılan açık kaynaklı bir kütüphanedir. C++, Python ve Java dillerinde kullanılabilir ve Windows, Linux, Mac OS ve Android işletim sistemlerini destekler. OpenCV, gerçek zamanlı görüntü işleme için tasarlanmış olup, yüz algılama, nesne algılama, görüntü sınıflandırma, 3D model oluşturma, video analizi gibi birçok gelişmiş işlevi içerir.
+
+Bu projede, OpenCV kütüphanesi eski fotoğrafların dijital restorasyon sürecinde birden fazla önemli adımda kullanılıyor:
+
+
+SQLİTE
+SQLite, gömülü (embedded) bir SQL veritabanı kütüphanesidir ve en yaygın kullanılan veritabanı yönetim sistemlerinden biridir. Dosya tabanlı bir veritabanı olduğu için kurulum gerektirmez ve tüm veritabanı bir tek dosya üzerinde saklanır. Bu özellikler onu hafif, taşınabilir ve oldukça verimli bir seçenek yapar.
+
+Bu projede SQLite'ın tercih edilmesinin nedenleri şunlar olabilir:
+
+    Basitlik ve Hafiflik: SQLite, basit bir yapıya sahip olduğu için, küçük veya orta ölçekli projelerde kolaylıkla entegre edilebilir ve kullanılabilir.
+
+
+
+Non-local Means Denoising algoritması, görüntülerdeki gürültüyü azaltmak için, benzer piksel gruplarının ağırlıklı ortalamasını alarak çalışır. Bu yöntem, detayları korurken gürültüyü etkili bir şekilde giderir ve özellikle detayların korunmasının önemli olduğu eski fotoğrafların iyileştirilmesinde kullanışlıdır.
+
+Color Balance Adjustment, eski veya solmuş fotoğrafların renklerini yeniden canlandırmak amacıyla kullanılan bir yöntemdir. Zaman içinde renkleri bozulan veya saklama koşullarından ötürü renk dengesi kaymış fotoğraflarda, bu teknik sayesinde renk tonları düzeltilir ve daha doğal, dengeli bir görünüme kavuşturulur. Bu süreçte parlaklık, kontrast ve renk doygunluğu gibi unsurların yanı sıra kırmızı, yeşil ve mavi renk kanalları ayrı ayrı ayarlanabilir, böylece orijinal sahnenin gerçek renkleri daha iyi bir şekilde yansıtılır.
+
+Görüntülerdeki kontrastı iyileştirmek için kullanılan bir tekniktir. Görüntüyü küçük bloklara ayırır ve her bir bloka bağımsız olarak histogram eşitleme uygular. Bu yöntem, gürültünün aşırı artmasını önler ve özellikle karanlık veya aşırı pozlanmış görüntü alanlarında detayları ortaya çıkarmakta etkilidir.
+
+Unsharp Masking, görüntülerin daha net ve ayrıntılı görünmesini sağlamak için kullanılan bir görüntü işleme tekniğidir. Bu yöntemde, önce orijinal görüntüden bir bulanık kopya oluşturulur ve bu bulanık kopya orijinal görüntüden çıkarılır. Elde edilen fark görüntüsü, orijinal görüntüye belirli bir ağırlıkla geri eklenerek detayların vurgulanması sağlanır. Bu işlem, görüntünün kenarlarını ve çizgilerini belirginleştirerek genel görüntü keskinliğini artırır.

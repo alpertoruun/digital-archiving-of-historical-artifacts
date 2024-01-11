@@ -27,24 +27,33 @@ def insert_image_metadata(conn, file_path, additional_info):
 
 # Non-local Means Denoising için parametreleri ayarlayabilirsiniz.
 def non_local_means_denoising(colored_image, h=10, hForColorComponents=10, templateWindowSize=7, searchWindowSize=21):
+    # h: Lüminans bileşeni(bir görüntünün parlaklık seviyesi) için filtre gücü. Yüksek h değeri gürültüyü daha iyi giderir ancak görüntünün detaylarını da azaltabilir.
+    # hForColorComponents: Renk bileşenleri için h, genellikle renkli görüntülerde h ile aynıdır.
+    # templateWindowSize: Tek sayı olmalıdır. Verilen piksel için ağırlıklı ortalama hesaplamak için kullanılan pencerenin boyutu.
+    # searchWindowSize: Tek sayı olmalıdır. Benzer komşuluk pencerelerine sahip pikselleri aramak için kullanılan pencerenin boyutu.
     return cv2.fastNlMeansDenoisingColored(colored_image, None, h, hForColorComponents, templateWindowSize, searchWindowSize)
 
-# Renk dengesini ayarlamak için 'alpha' ve 'beta' parametrelerini ayarlayabilirsiniz.
 def adjust_color_balance(image, alpha=1.5, beta=0):
+    # alpha: Görüntünün kontrastını kontrol eder. 1'den büyük değerler görüntüyü daha kontrastlı yapar.
+    # beta: Görüntünün parlaklığını kontrol eder. Pozitif değerler görüntüyü daha parlak yapar.
     return cv2.addWeighted(image, alpha, np.zeros_like(image, dtype=image.dtype), 0, beta)
 
-# Adaptif histogram eşitleme için 'clipLimit' ve 'tileGridSize' ayarlayabilirsiniz.
 def adaptive_histogram_equalization(image, clipLimit=2.0, tileGridSize=(8, 8)):
+    # clipLimit: Kontrast sınırlama için eşik değeri. Yüksek değerler kontrastı artırır, çok yüksek değerler gürültüye yol açabilir.
+    # tileGridSize: Histogram eşitlemesi için kafes boyutu. Görüntü tileGridSize sayısına göre kafeslere bölünür.
     img_yuv = cv2.cvtColor(image, cv2.COLOR_BGR2YUV)
     clahe = cv2.createCLAHE(clipLimit=clipLimit, tileGridSize=tileGridSize)
     img_yuv[:,:,0] = clahe.apply(img_yuv[:,:,0])
     return cv2.cvtColor(img_yuv, cv2.COLOR_YUV2BGR)
 
-# Unsharp mask için 'strength', 'radius' ve 'threshold' parametrelerini ayarlayabilirsiniz.
 def unsharp_mask(image, strength=1.5, radius=5, threshold=3):
+    # strength: Kenarlara uygulanan keskinleştirme miktarı. Daha yüksek değerler daha belirgin bir keskinleştirme etkisi yaratır.
+    # radius: Orijinalden çıkarılan Gaussian bulanıklığının yarıçapı. Daha büyük yarıçap daha fazla bulanıklık üretir.
+    # threshold: Unsharp mask için eşik değeri. Bu eşikten daha az yoğunluk farkına sahip pikseller keskinleştirme için dikkate alınmaz.
     blurred = cv2.GaussianBlur(image, (radius, radius), 0)
     sharpened = cv2.addWeighted(image, 1 + strength, blurred, -strength, 0)
     return sharpened
+
 
 def load_image(path):
     return cv2.imread(path)
