@@ -40,7 +40,7 @@ def adjust_color_balance(image, alpha=1.5, beta=0):
 
 def adaptive_histogram_equalization(image, clipLimit=2.0, tileGridSize=(8, 8)):
     # clipLimit: Kontrast sınırlama için eşik değeri. Yüksek değerler kontrastı artırır, çok yüksek değerler gürültüye yol açabilir.
-    # tileGridSize: Histogram eşitlemesi için kafes boyutu. Görüntü tileGridSize sayısına göre kafeslere bölünür.
+    # tileGridSize: Histogram eşitlemesi için grid boyutu. Görüntü tileGridSize sayısına göre gridlere bölünür.
     img_yuv = cv2.cvtColor(image, cv2.COLOR_BGR2YUV)
     clahe = cv2.createCLAHE(clipLimit=clipLimit, tileGridSize=tileGridSize)
     img_yuv[:,:,0] = clahe.apply(img_yuv[:,:,0])
